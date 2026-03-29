@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Placement Predictor</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        form {
+            background: #1e293b;
+            padding: 20px;
+            margin: auto;
+            width: 40%;
+            border-radius: 10px;
+        }
+
+        input {
+            width: 80%;
+            padding: 10px;
+            margin: 8px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #22c55e;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #16a34a;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🎓 University Placement Predictor</h1>
+
+<form action="/predict" method="post">
+
+    <!-- Correct inputs based on dataset -->
+
+    <input type="number" step="any" name="cgpa" placeholder="Enter CGPA" required><br>
+
+    <input type="number" name="internships" placeholder="No. of Internships" required><br>
+
+    <input type="number" name="projects" placeholder="No. of Projects" required><br>
+
+    <input type="number" name="aptitude" placeholder="Aptitude Score" required><br>
+
+    <input type="number" name="communication" placeholder="Communication Skills" required><br>
+
+    <button type="submit">Predict Placement</button>
+
+</form>
+
+<div class="result">
+    {{ prediction_text }}
+</div>
+
+</body>
+</html>
